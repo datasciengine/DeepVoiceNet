@@ -1,0 +1,5 @@
+praat-parselmouth
+pandas
+wheel
+scipy
+# my-voice-analysis
