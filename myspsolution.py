@@ -12,7 +12,7 @@ class MyPraatAnalysis:
     def get_objects(self, sound_path: str, praat_path: str):
         wdir = ""
         try:
-            return run_file("asdadasdasda")
+            return run_file(praat_path, -20, 2, 0.3, "yes", sound_path, wdir, 80, 400, 0.01, capture_output=True)
         except Exception as e:
             print(f"We couldnt get object item, process failed. Error could be {e}")
 
@@ -81,7 +81,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def pause_analysis(self):
         try:
@@ -92,7 +92,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def speech_rate_analysis(self):
         try:
@@ -103,7 +103,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def articulation_rate_analysis(self):
         try:
@@ -114,7 +114,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def speech_duration_analysis(self):
         try:
@@ -125,7 +125,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def original_duration_analysis(self):
         try:
@@ -136,7 +136,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def balance_analysis(self):
         try:
@@ -147,7 +147,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def freq_0_mean_analysis(self):
         try:
@@ -158,7 +158,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def freq_0_stdev_analysis(self):
         try:
@@ -169,7 +169,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def freq_0_median_analysis(self):
 
@@ -181,7 +181,7 @@ class MyPraatAnalysis:
         except:
             z4 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z4
 
     def freq_0_min_analysis(self):
 
@@ -193,7 +193,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def freq_0_max_analysis(self):
         try:
@@ -204,7 +204,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def freq_0_q25_analysis(self):
         try:
@@ -215,7 +215,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def freq_0_q75_analysis(self):
         try:
@@ -226,7 +226,7 @@ class MyPraatAnalysis:
         except:
             z3 = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return z3
 
     def pronunciation_analysis(self):
         try:
@@ -238,8 +238,9 @@ class MyPraatAnalysis:
             b = np.mean(a) * 100 / 10
             print("Pronunciation_posteriori_probability_score_percentage= :%.2f" % (b))
         except:
+            b = 0
             print("Try again the sound of the audio was not clear")
-        return;
+        return b
 
     def gender_mode_analysis(self):
         try:
