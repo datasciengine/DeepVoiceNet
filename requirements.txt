@@ -2,4 +2,8 @@ praat-parselmouth
 pandas
 wheel
 scipy
+uvicorn
+fastapi
+loguru
+pydub==0.25.1
 # my-voice-analysis
