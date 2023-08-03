@@ -5,7 +5,7 @@ import numpy as np
 
 
 class MyPraatAnalysis:
-    def __init__(self, sound_path: str, praat_path: str):
+    def __init__(self, sound_path, praat_path):
         self.objects = self.get_objects(sound_path, praat_path)
         self.z1 = str(self.objects[1])
 
@@ -16,44 +16,43 @@ class MyPraatAnalysis:
         except Exception as e:
             print(f"We couldnt get object item, process failed. Error could be {e}")
 
-    def analyze(self):
+    # def analyze(self):
+    #     print(self.objects)
 
-        print(self.objects)
-
-        # self.total_analysis()
-        # print("_" * 30)
-        # self.gender_mode_analysis()
-        # print("_" * 30)
-        # self.syllables_analysis()
-        # print("_" * 30)
-        # self.pause_analysis()
-        # print("_" * 30)
-        # self.speech_rate_analysis()
-        # print("_" * 30)
-        # self.articulation_rate_analysis()
-        # print("_" * 30)
-        # self.speech_duration_analysis()
-        # print("_" * 30)
-        # self.original_duration_analysis()
-        # print("_" * 30)
-        # self.balance_analysis()
-        # print("_" * 30)
-        # self.freq_0_mean_analysis()
-        # print("_" * 30)
-        # self.freq_0_stdev_analysis()
-        # print("_" * 30)
-        # self.freq_0_median_analysis()
-        # print("_" * 30)
-        # self.freq_0_min_analysis()
-        # print("_" * 30)
-        # self.freq_0_max_analysis()
-        # print("_" * 30)
-        # self.freq_0_q25_analysis()
-        # print("_" * 30)
-        # self.freq_0_q75_analysis()
-        # print("_" * 30)
-        # self.pronunciation_analysis()
-        # print("_" * 30)
+    # self.total_analysis()
+    # print("_" * 30)
+    # self.gender_mode_analysis()
+    # print("_" * 30)
+    # self.syllables_analysis()
+    # print("_" * 30)
+    # self.pause_analysis()
+    # print("_" * 30)
+    # self.speech_rate_analysis()
+    # print("_" * 30)
+    # self.articulation_rate_analysis()
+    # print("_" * 30)
+    # self.speech_duration_analysis()
+    # print("_" * 30)
+    # self.original_duration_analysis()
+    # print("_" * 30)
+    # self.balance_analysis()
+    # print("_" * 30)
+    # self.freq_0_mean_analysis()
+    # print("_" * 30)
+    # self.freq_0_stdev_analysis()
+    # print("_" * 30)
+    # self.freq_0_median_analysis()
+    # print("_" * 30)
+    # self.freq_0_min_analysis()
+    # print("_" * 30)
+    # self.freq_0_max_analysis()
+    # print("_" * 30)
+    # self.freq_0_q25_analysis()
+    # print("_" * 30)
+    # self.freq_0_q75_analysis()
+    # print("_" * 30)
+    # self.pronunciation_analysis()
+    # print("_" * 30)
 
     def total_analysis(self):
         try:
@@ -67,7 +66,7 @@ class MyPraatAnalysis:
                  "original_duration": z5[5, :], "balance": z5[6, :], "f0_mean": z5[7, :], "f0_std": z5[8, :],
                  "f0_median": z5[9, :], "f0_min": z5[10, :], "f0_max": z5[11, :],
                  "f0_quantile25": z5[12, :], "f0_quan75": z5[13, :]})
-            print(dataset.T)
+            # print(dataset.T)
         except Exception as e:
             print("Try again the sound of the audio was not clear", e)
         return;
@@ -88,10 +87,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[1])  # will be the integer number 10
             z4 = float(z2[3])  # will be the floating point number 8.3
-            print("number_of_pauses=", z3)
+            # print("number_of_pauses=", z3)
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def speech_rate_analysis(self):
@@ -99,10 +98,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[2])  # will be the integer number 10
             z4 = float(z2[3])  # will be the floating point number 8.3
-            print("rate_of_speech=", z3, "# syllables/sec original duration")
+            # print("rate_of_speech=", z3, "# syllables/sec original duration")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def articulation_rate_analysis(self):
@@ -110,10 +109,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[3])  # will be the floating point number 8.3
-            print("articulation_rate=", z3, "# syllables/sec speaking duration")
+            # print("articulation_rate=", z3, "# syllables/sec speaking duration")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def speech_duration_analysis(self):
@@ -121,10 +120,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[4])  # will be the floating point number 8.3
-            print("speaking_duration=", z4, "# sec only speaking duration without pauses")
+            # print("speaking_duration=", z4, "# sec only speaking duration without pauses")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def original_duration_analysis(self):
@@ -132,10 +131,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[5])  # will be the floating point number 8.3
-            print("original_duration=", z4, "# sec total speaking duration with pauses")
+            # ("original_duration=", z4, "# sec total speaking duration with pauses")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def balance_analysis(self):
@@ -143,10 +142,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[6])  # will be the floating point number 8.3
-            print("balance=", z4, "# ratio (speaking duration)/(original duration)")
+            # print("balance=", z4, "# ratio (speaking duration)/(original duration)")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def freq_0_mean_analysis(self):
@@ -154,10 +153,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[7])  # will be the floating point number 8.3
-            print("f0_mean=", z4, "# Hz global mean of fundamental frequency distribution")
+            # print("f0_mean=", z4, "# Hz global mean of fundamental frequency distribution")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def freq_0_stdev_analysis(self):
@@ -165,10 +164,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[8])  # will be the floating point number 8.3
-            print("f0_SD=", z4, "# Hz global standard deviation of fundamental frequency distribution")
+            # print("f0_SD=", z4, "# Hz global standard deviation of fundamental frequency distribution")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def freq_0_median_analysis(self):
@@ -177,10 +176,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[3])  # will be the integer number 10
             z4 = float(z2[9])  # will be the floating point number 8.3
-            print("f0_MD=", z4, "# Hz global median of fundamental frequency distribution")
+            # print("f0_MD=", z4, "# Hz global median of fundamental frequency distribution")
         except:
             z4 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z4
 
     def freq_0_min_analysis(self):
@@ -189,10 +188,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[10])  # will be the integer number 10
             z4 = float(z2[10])  # will be the floating point number 8.3
-            print("f0_min=", z3, "# Hz global minimum of fundamental frequency distribution")
+            # ("f0_min=", z3, "# Hz global minimum of fundamental frequency distribution")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def freq_0_max_analysis(self):
@@ -200,10 +199,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[11])  # will be the integer number 10
             z4 = float(z2[11])  # will be the floating point number 8.3
-            print("f0_max=", z3, "# Hz global maximum of fundamental frequency distribution")
+            # print("f0_max=", z3, "# Hz global maximum of fundamental frequency distribution")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def freq_0_q25_analysis(self):
@@ -211,10 +210,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[12])  # will be the integer number 10
             z4 = float(z2[11])  # will be the floating point number 8.3
-            print("f0_quan25=", z3, "# Hz global 25th quantile of fundamental frequency distribution")
+            # print("f0_quan25=", z3, "# Hz global 25th quantile of fundamental frequency distribution")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def freq_0_q75_analysis(self):
@@ -222,10 +221,10 @@ class MyPraatAnalysis:
             z2 = self.z1.strip().split()
             z3 = int(z2[13])  # will be the integer number 10
             z4 = float(z2[11])  # will be the floating point number 8.3
-            print("f0_quan75=", z3, "# Hz global 75th quantile of fundamental frequency distribution")
+            # print("f0_quan75=", z3, "# Hz global 75th quantile of fundamental frequency distribution")
         except:
             z3 = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return z3
 
     def pronunciation_analysis(self):
@@ -236,10 +235,10 @@ class MyPraatAnalysis:
             db = binom.rvs(n=10, p=z4, size=10000)
             a = np.array(db)
             b = np.mean(a) * 100 / 10
-            print("Pronunciation_posteriori_probability_score_percentage= :%.2f" % (b))
+            # print("Pronunciation_posteriori_probability_score_percentage= :%.2f" % (b))
         except:
             b = 0
-            print("Try again the sound of the audio was not clear")
+            # print("Try again the sound of the audio was not clear")
         return b
 
     def gender_mode_analysis(self):
@@ -267,7 +266,7 @@ class MyPraatAnalysis:
                 g = 239
                 j = 5.3
             else:
-                print("Voice not recognized")
+                # print("Voice not recognized")
                 exit()
 
             def teset(a, b, c, d):
